@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+body{
+	background: url(../../index/img/bg.gif) repeat 0 0;;
+}
+
+h1{
+	color:#fff;
+	margin: 30px 16px 30px;
+	font-size: 40px;
+	letter-spacing: 0.04em;
+}
+
+#mainContents{
+	width: 960px;
+	margin: 0 auto;
+	text-align: left;
+}
+
+#mainContents p {
+	width: 208px;
+	float: left;
+	margin: 0 16px 30px;
+	display: inline;
+	color: #fff;
+}
+
+#mainContents p a{
+	text-decoration: none;
+	color: #CAC39B;
+	height: 129px;
+	background: #fff;
+	display: block;
+	margin-bottom: 5px;
+}
+
+
+div#footer{
+	margin-top: 60px;
+	background: #7FFF00;
+}
+
+div#footer p{
+	text-align: center;
+	margin: 0 auto;
+	padding: 7px 0;
+	color: #000000;
+}

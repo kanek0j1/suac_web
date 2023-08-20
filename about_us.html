@@ -1,0 +1,798 @@
+ <!-- ここからメインコンテンツまで編集禁止 -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>SUACとは</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+    <!-- アイコンフォントの利用方法 http://fortawesome.github.io/Font-Awesome/ -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <style>
+        body {
+            background: #fff;
+            color: #444;
+            font-size: 16px;
+            font-family: 'メイリオ', Meiryo, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Helvetica, Arial, 'ＭＳ Ｐゴシック', sans-serif;
+            line-height: 1.42857;
+        }
+
+        a:link {
+            color: #04c;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #f00;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: #999;
+            text-decoration: none;
+        }
+        /* ヘッダー */
+
+        .header {
+            z-index: 100;
+            width: 100%;
+            border-bottom: #ccd1d9 solid 1px;
+            background: #fff;
+            color: #333;
+            text-align: center;
+        }
+
+        .header:after {
+            display: block;
+            clear: both;
+            content: "";
+        }
+
+        .header-title {
+            margin: 12px 24px;
+            font-size: 2em;
+            float: left;
+        }
+
+        .header-description {
+            color: #999;
+        }
+         .fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        }
+        /* ナビゲーション */
+
+        .nav {
+            z-index: 100;
+            margin: 16px 24px;
+            background: #fff;
+            text-align: center;
+            float: right;
+        }
+
+        .nav-group {
+            margin: 0;
+            padding: 0;
+            display: -moz-inline-stack;
+            display: inline-block;
+            vertical-align: middle;
+            *vertical-align: auto;
+            zoom: 1;
+            *display: inline;
+        }
+
+        .nav-group > li {
+            margin: 0;
+            padding: 0 12px;
+            display: -moz-inline-stack;
+            display: inline-block;
+            vertical-align: middle;
+            *vertical-align: auto;
+            zoom: 1;
+            *display: inline;
+        }
+
+        .nav-group > li a {
+            display: block;
+            padding: 6px 12px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .nav-group > li a:hover {
+            color: #999;
+        }
+
+        .nav-group > li a.active {
+            border-bottom: #333 solid 2px;
+            color: #999;
+        }
+        .fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        }
+    
+        /* メインイメージ */
+
+        .main {
+            padding: 144px 0;
+            width: 100%;
+            background: #00ff00;
+            background-image: linear-gradient(135deg, #00ff00, #0b610b,#00ff00);
+            color: #fff;
+            text-align: center;
+            font-weight: bold;
+            font-size: 3em;
+        }
+
+        .sub {
+            padding: 20px 0;
+            width: 100%;
+            background: #00ff00;
+            background-image: linear-gradient(135deg, #00ff00, #0b610b,#00ff00);
+            color: #fff;
+            text-align: center;
+            font-weight: bold;
+            font-size: 3em;
+        }
+        /* コンテンツ */
+
+        .content {
+            padding: 48px 0 24px;
+            *zoom: 1;
+        }
+
+        .article {
+            margin: 0 auto 48px;
+            width: 960px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            *zoom: 1;
+        }
+
+        .content:after,
+        .article:after,
+        .article-paragraph:after {
+            display: block;
+            clear: both;
+            content: '';
+        }
+
+        .article-title {
+            padding-bottom: 6px;
+            border-bottom: #333 solid 1px;
+        }
+
+        .article-title,
+        .article-paragraph-title {
+            clear: both;
+            margin: 0 0 24px;
+        }
+
+        .article-date {
+            margin: 0 0 6px;
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .article-paragraph {
+            margin: 0 0 24px;
+            line-height: 1.7;
+            *zoom: 1;
+        }
+
+        .article-list {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .article-list > li {
+            padding: 12px 0;
+            border-bottom: #ddd dotted 1px;
+        }
+
+        .article-list > li:last-child {
+            border-bottom: none;
+        }
+
+        .article-list-date {
+            padding-right: 12px;
+            color: #999;
+        }
+　　　　　
+        img.article-img_album {
+            margin-bottom: 40px;
+            display: -webkit-flex;
+            display: flex;
+        }
+        img.article-img {
+            display: block;
+            margin: 0 0 12px;
+        }
+
+        img.article-img_left {
+            float: left;
+            margin: 0 24px 0 0;
+        }
+
+        img.article-img_right {
+            float: right;
+            margin: 0 0 0 24px;
+        }
+
+        .article-paragraph:last-child,
+        .article-img:last-child {
+            margin: 0;
+        }
+
+        .address {
+            padding: 24px 0 24px 0;
+            border-top: #ccd1d9 solid 1px;
+            background: #fff;
+            text-align: center;
+        }
+
+        .address-body {
+            color: #666;
+            text-align: left;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            display: -moz-inline-stack;
+            display: inline-block;
+            vertical-align: middle;
+            *vertical-align: auto;
+            zoom: 1;
+            *display: inline;
+        }
+
+        .address-body-name {
+            display: block;
+            margin-bottom: 12px;
+            font-size: 1.2em;
+        }
+
+        .address-body-addressline {
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .address-body-tel {
+            display: block;
+            font-size: 1.1em;
+        }
+
+        a.btn-pagetop {
+            position: fixed;
+            right: 48px;
+            bottom: 36px;
+            width: 72px;
+            height: 72px;
+            border: #ccd1d9 solid 1px;
+            background: #fff;
+            color: #aab2bd;
+            text-align: center;
+            font-size: 3em;
+            vertical-align: baseline;
+            display: -moz-inline-stack;
+            display: inline-block;
+            vertical-align: middle;
+            *vertical-align: auto;
+            zoom: 1;
+            *display: inline;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            border-radius: 50%;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        /* フッター */
+
+        .footer {
+            padding: 12px 0;
+            border-top: #ccd1d9 solid 1px;
+            background: #fff;
+            text-align: center;
+        }
+
+        .footer-nav {
+            margin-bottom: 12px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .footer-nav-group {
+            margin: 0;
+            padding: 0;
+            display: -moz-inline-stack;
+            display: inline-block;
+            vertical-align: middle;
+            *vertical-align: auto;
+            zoom: 1;
+            *display: inline;
+        }
+
+        .footer-nav-group > li {
+            margin: 0;
+            padding: 0 6px;
+            font-size: 0.9em;
+            display: -moz-inline-stack;
+            display: inline-block;
+            vertical-align: middle;
+            *vertical-align: auto;
+            zoom: 1;
+            *display: inline;
+        }
+
+        .footer-nav-group > li a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        .footer-nav-group > li a:hover {
+            color: #999;
+        }
+
+        .footer-text {
+            margin-bottom: 6px;
+            color: #999;
+            font-size: 0.8em;
+        }
+
+        .footer-copyright {
+            color: #999;
+            font-size: 0.8em;
+        }
+        /* パーツ */
+
+        .btn {
+            margin: 6px;
+            padding: 12px 24px;
+            border: #aab2bd solid 1px;
+            background: #aab2bd;
+            color: #fff;
+            vertical-align: baseline;
+            text-align: center;
+            white-space: nowrap;
+            font-size: 1em;
+            line-height: 1;
+            cursor: pointer;
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            -ms-border-radius: 6px;
+            -o-border-radius: 6px;
+            border-radius: 6px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            display: -moz-inline-stack;
+            display: inline-block;
+            vertical-align: middle;
+            *vertical-align: auto;
+            zoom: 1;
+            *display: inline;
+        }
+
+        .btn_lg {
+            padding: 18px 36px;
+        }
+
+        .btn_sm {
+            padding: 6px 12px;
+            font-size: 0.8em;
+        }
+
+        a.btn:link,
+        a.btn:active,
+        a.btn:focus,
+        a.btn:hover,
+        a.btn:visited {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        a.btn_default:link,
+        a.btn_default:active,
+        a.btn_default:focus,
+        a.btn_default:hover,
+        a.btn_default:visited {
+            color: #656d78;
+            text-decoration: none;
+        }
+
+        .btn_normal {
+            border: #aab2bd solid 1px;
+            background: #aab2bd;
+        }
+
+        .btn_default {
+            border: #ccd1d9 solid 1px;
+            background: #f5f7fa;
+        }
+
+        .btn_primary {
+            border: #4a89dc solid 1px;
+            background: #4a89dc;
+        }
+
+        .btn_success {
+            border: #8cc152 solid 1px;
+            background: #8cc152;
+        }
+
+        .btn_warning {
+            border: #f6bb42 solid 1px;
+            background: #f6bb42;
+        }
+
+        .btn_danger {
+            border: #da4453 solid 1px;
+            background: #da4453;
+        }
+
+        .btn_normal:hover {
+            border: #ccd1d9 solid 1px;
+            background: #ccd1d9;
+        }
+
+        .btn_default:hover {
+            border: #aab2bd solid 1px;
+            background: #e6e9ed;
+        }
+
+        .btn_primary:hover {
+            border: #5d9cec solid 1px;
+            background: #5d9cec;
+        }
+
+        .btn_success:hover {
+            border: #a0d468 solid 1px;
+            background: #a0d468;
+        }
+
+        .btn_warning:hover {
+            border: #ffce54 solid 1px;
+            background: #ffce54;
+        }
+
+        .btn_danger:hover {
+            border: #ed5565 solid 1px;
+            background: #ed5565;
+        }
+
+        .img-rounded,
+        .img-circle,
+        .img-thumbnail {
+            margin: 6px;
+        }
+
+        .img-rounded {
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            -ms-border-radius: 6px;
+            -o-border-radius: 6px;
+            border-radius: 6px;
+        }
+
+        .img-circle {
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            border-radius: 50%;
+        }
+
+        .img-thumbnail {
+            padding: 3px;
+            border: #ccd1d9 solid 1px;
+            vertical-align: baseline;
+            line-height: 1;
+            display: -moz-inline-stack;
+            display: inline-block;
+            vertical-align: middle;
+            *vertical-align: auto;
+            zoom: 1;
+            *display: inline;
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            -ms-border-radius: 6px;
+            -o-border-radius: 6px;
+            border-radius: 6px;
+        }
+
+        .label {
+            margin: 0 12px;
+            padding: 3px 6px;
+            border: #656d78 solid 1px;
+            background: #656d78;
+            color: #fff;
+            vertical-align: baseline;
+            text-align: center;
+            white-space: nowrap;
+            font-size: 0.6em;
+            line-height: 1;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            -ms-border-radius: 3px;
+            -o-border-radius: 3px;
+            border-radius: 3px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            display: -moz-inline-stack;
+            display: inline-block;
+            vertical-align: middle;
+            *vertical-align: auto;
+            zoom: 1;
+            *display: inline;
+        }
+
+        .label_normal {
+            border: #656d78 solid 1px;
+            background: #656d78;
+        }
+
+        .label_primary {
+            border: #5d9cec solid 1px;
+            background: #5d9cec;
+        }
+
+        .label_success {
+            border: #a0d468 solid 1px;
+            background: #a0d468;
+        }
+
+        .label_warning {
+            border: #ffce54 solid 1px;
+            background: #ffce54;
+        }
+
+        .label_danger {
+            border: #ed5565 solid 1px;
+            background: #ed5565;
+        }
+
+        .text_normal {
+            color: #656d78;
+        }
+
+        .text_primary {
+            color: #4a89dc;
+        }
+
+        .text_success {
+            color: #8cc152;
+        }
+
+        .text_warning {
+            color: #f6bb42;
+        }
+
+        .text_danger {
+            color: #da4453;
+        }
+
+        .message {
+            margin-bottom: 12px;
+            padding: 12px 24px;
+            border: #656d78 solid 1px;
+            background: #656d78;
+            color: #fff;
+            vertical-align: baseline;
+            line-height: 1;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            -ms-border-radius: 3px;
+            -o-border-radius: 3px;
+            border-radius: 3px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            display: -moz-inline-stack;
+            display: inline-block;
+            vertical-align: middle;
+            *vertical-align: auto;
+            zoom: 1;
+            *display: inline;
+        }
+
+        .message_normal {
+            border: #656d78 solid 1px;
+            background: #656d78;
+        }
+
+        .message_default {
+            border: #ccd1d9 solid 1px;
+            background: #f5f7fa;
+            color: #656d78;
+        }
+
+        .message_primary {
+            border: #4a89dc solid 1px;
+            background: #4a89dc;
+        }
+
+        .message_success {
+            border: #8cc152 solid 1px;
+            background: #8cc152;
+        }
+
+        .message_warning {
+            border: #f6bb42 solid 1px;
+            background: #f6bb42;
+        }
+
+        .message_danger {
+            border: #da4453 solid 1px;
+            background: #da4453;
+        }
+
+        .panel {
+            margin-bottom: 24px;
+            width: 100%;
+            border: #ccd1d9 solid 1px;
+            background: #fff;
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            -ms-border-radius: 6px;
+            -o-border-radius: 6px;
+            border-radius: 6px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            display: -moz-inline-stack;
+            display: inline-block;
+            vertical-align: middle;
+            *vertical-align: auto;
+            zoom: 1;
+            *display: inline;
+        }
+
+        .panel-header {
+            padding: 12px 24px;
+            border-bottom: #ccd1d9 solid 1px;
+            background: #f5f7fa;
+            font-size: 0.9em;
+            -webkit-border-radius: 6px 6px 0 0;
+            -moz-border-radius: 6px 6px 0 0;
+            -ms-border-radius: 6px 6px 0 0;
+            -o-border-radius: 6px 6px 0 0;
+            border-radius: 6px 6px 0 0;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .panel-body {
+            padding: 12px 24px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+    </style>
+    <script>
+        // 画面上部にスクロールするボタン
+        $(function() {
+            var pageTop = $('.btn-pagetop');
+            pageTop.hide();
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 600) {
+                    pageTop.fadeIn();
+                } else {
+                    pageTop.fadeOut();
+                }
+            });
+            pageTop.click(function() {
+                $('body, html').animate({
+                    scrollTop: 0
+                }, 500, 'swing');
+                pageTop.blur();
+                return false;
+            });
+        });
+    </script>
+</head>
+
+<body id="top">
+ <div class="header fixed">
+  <h1 class="header-title">専修大学体育会自動車部</h1>
+  <div class="nav fixed">
+   <ul class="nav-group">
+    <li><a href="index.html"><i class="fa fa-home"></i>&nbsp;ホーム</a></li>
+    <li><a href="about_us.html" class="active">SUACとは</a></li>
+    <li><a href="about_competition.html">競技紹介</a></li>
+    <li><a href="cars.html">部車紹介</a></li>
+    <li><a href="member.html">部員紹介</a></li>
+    <li><a href="schedule.html">大会日程</a></li>
+    <li><a href="sponsor.html">スポンサー紹介</a></li>
+    <li><a href="access.html">アクセス</a></li>
+   </ul>
+  </div>
+ </div>
+    
+  
+ <!-- これ以前は編集禁止 -->
+  
+  
+  
+  
+  
+  
+  <!-- コンテンツタイトル -->
+ <h1 class="main"><span style="color: #ffffff;">SUACとは</span></h1>
+ <div class="content">
+  <div class="article">
+   <h2 class="article-title">専修大学体育会自動車部とは</h2>
+   <img class="img-rounded article-img " src="img/about_us1.jpg" width="960" height="540">
+   <p class="article-paragraph">専修大学体育会自動車部 S.U.A.C.-Senshu University Automobile Club-は、<br>専修大学体育会所属で、創部89年（2020年現在）の伝統ある部です。<br>古くからの伝統の良いところを残しながらも、先輩、後輩、そしてOBまで、<br>風通しの良いコミュニケーションがとれる体育会の部活動です。<br>車の安全な整備方法、安全な運転、車の楽しみ方を学ぶことが出来ます。<br>神田と生田の両キャンパスに通う車好き同士が集まり楽しく活動しています。<br>今後の人生におけるカーライフの準備をすることが出来る特別な場所です</p>
+  </div>
+  <div class="article">
+            <h2 class="article-title">活動について</h2>
+            <img class="img-rounded article-img" src="img/about_us2.jpg" width="960" height="540">
+            <p class="article-paragraph">
+                <img class="img-circle article-img_right" src="img/about_us3.jpg" width="200" height="200">主な活動日は、毎週火曜日・土曜日です。<br>火曜日の活動はミーティングを行います。<br>授業が終わった人から部室に集まり始め、人数がそろったら開始します。<br>土曜日が本格的な活動日です。<br>午前10：00までに集合し、掃除・全車両のチェックに始まり、車両の整備や競技の練習を行います。<br>活動場所は、自動車部部室・ガレージです。<br>詳細な場所は<a href="access.html">アクセス</a>のページをご覧ください。<br>夏期休暇中・春期休暇中は、火曜日も土曜日と同じように活動します。<br>このほかにも、不定期で日曜日に大会や練習会が行われます。<br><br>
+                <img class="img-circle article-img_left" src="img/about_us4.jpg" width="300" height="200"><br><br>また、夏期休暇中には夏合宿を行います。試合前には競技ごとの強化合宿も行います.<br>主な合宿場所は、新潟県妙高高原、山梨県山中湖村の専修大学セミナーハウスです。</p>
+            <p class="article-paragraph">
+                <h2 class="article-title">アルバム</h2>
+                <img class="img-thumbnail article-img_album" src="img/album_1.jpg" width="320" height="220"> 
+                <img class="img-thumbnail article-img_album" src="img/album_2.jpg" width="320" height="220"> 
+                <img class="img-thumbnail article-img_album" src="img/album_3.jpg" width="220" height="220">
+                <img class="img-thumbnail article-img_album" src="img/album_4.jpg" width="320" height="220">
+                <img class="img-thumbnail article-img_album" src="img/album_5.jpg" width="220" height="220">
+                <img class="img-thumbnail article-img_album" src="img/album_6.jpg" width="320" height="220">   <img class="img-thumbnail article-img_album" src="img/album_10.jpg" width="220" height="220"><img class="img-thumbnail article-img_album" src="img/album_7.jpg" width="320" height="220">
+               <img class="img-thumbnail article-img_album" src="img/album_8.jpg" width="320" height="220">
+    <img class="img-thumbnail article-img_album" src="img/album_9.jpg" width="320" height="220"> <img class="img-thumbnail article-img_album" src="img/album_11.jpg" width="320" height="220"> <img class="img-thumbnail article-img_album" src="img/album_12.jpg" width="220" height="220"> <img class="img-thumbnail article-img_album" src="img/album_13.jpg" width="320" height="220"> <img class="img-thumbnail article-img_album" src="img/album_14.jpg" width="220" height="220"> <img class="img-thumbnail article-img_album" src="img/album_15.jpg" width="320" height="220">
+ 
+ 
+ 
+ 
+ 
+    </p>
+        </div>
+</div>
+   
+ <!-- これ以降編集禁止-->
+  
+ <div class="address">
+  <div class="address-body"><strong class="address-body-name">専修大学体育会自動車部<br>Senshu.University.Automobile.Club</strong>
+   <div class="address-body-addressline">〒214-0032 神奈川県川崎市多摩区桝形5−1−10</div>
+   <strong class="address-body-tel"><i class="fa fa-phone"></i>&nbsp;044-900-3106</strong>
+  </div>
+ </div>
+ <div class="footer">
+  <div class="footer-nav">
+   <ul class="footer-nav-group">
+    <li><a href="mailto:suac111@yahoo.co.jp"><i class="fa fa-envelope-o"></i>&nbsp;Mail</a></li>
+    <li><a href="https://twitter.com/suac111"><i class="fa fa-twitter"></i>&nbsp;Twitter</a></li>
+    <li><a href="https://www.instagram.com/suac111/"><i class="fa fa-instagram"></i>&nbsp;Instagram</a></li>
+    <li><a href="https://www.facebook.com/%E5%B0%82%E4%BF%AE%E5%A4%A7%E5%AD%A6%E4%BD%93%E8%82%B2%E4%BC%9A%E8%87%AA%E5%8B%95%E8%BB%8A%E9%83%A8-925608657488074/"><i class="fa fa-facebook-official"></i>&nbsp;Facebook</a></li>
+    <li><a href="https://www.youtube.com/channel/UCrBRePwOlsxdNXpDzWn91XQ"><i class="fa fa-youtube"></i>&nbsp;YouTube</a></li>
+    <li><a href="https://ameblo.jp/suac111/"><i class="fa fa-edit"></i>&nbsp;Blog</a></li>
+   </ul>
+  </div>
+  <div class="footer-text">当サイトに存在する、文章・画像・動画等の著作物の情報を無断転載することを禁止します。</div>
+  <div class="footer-copyright">Copyright  (c)2018-2020 S.U.A.C  All right reserved.</div>
+ </div>
+ <p></p>
+ <!-- [FC2 Analyzer] //analyzer.fc2.com/  -->
+<script language="javascript" src="//analyzer54.fc2.com/ana/processor.php?uid=2808407" type="text/javascript"></script>
+<noscript><div align="right"><img src="//analyzer54.fc2.com/ana/icon.php?uid=2808407&ref=&href=&wid=0&hei=0&col=0" /></div></noscript>
+<!-- [FC2 Analyzer]  -->
+
+</body>
+
+</html>
