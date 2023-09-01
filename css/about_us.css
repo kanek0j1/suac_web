@@ -26,8 +26,17 @@ nav ul li{
     display: inline-block;
     text-align: center;
     width: 200px;
-    padding: 20px;
+    padding: 15px;
 }
+
+nav ul li a{
+    padding: 15px;
+    text-decoration: none;
+    color: black;
+}
+nav ul li :hover{
+    background-color: #cccccc;
+} 
 
 .main{
     padding: 144px 0;
